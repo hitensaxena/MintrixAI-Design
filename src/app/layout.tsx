@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mintrix AI Design Documentation",
+  title: "Mintrix.ai Design",
   description: "Illustrated design documentation website for Mintrix AI.",
 };
 
