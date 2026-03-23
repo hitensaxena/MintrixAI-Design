@@ -1,26 +1,94 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+@theme {
+  --color-background: #FFFBFE;
+  --color-on-background: #1C1B1F;
+  --color-surface: #FFFBFE;
+  --color-on-surface: #1C1B1F;
+  --color-surface-variant: #E7E0EC;
+  --color-on-surface-variant: #49454F;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #F7F2FA;
+  --color-surface-container: #F3EDF7;
+  --color-surface-container-high: #ECE6F0;
+  --color-surface-container-highest: #E6E0E9;
+  
+  --color-primary: #6750A4;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #EADDFF;
+  --color-on-primary-container: #21005D;
+  
+  --color-secondary: #625B71;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #E8DEF8;
+  --color-on-secondary-container: #1D192B;
+  
+  --color-outline: #79747E;
+  --color-outline-variant: #CAC4D0;
+  
+  --font-sans: "Roboto Flex", var(--font-geist-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #FFFBFE;
+  --foreground: #1C1B1F;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+
+.m3-surface-card {
+  background-color: var(--color-surface-container);
+  border-radius: 24px;
+  border: none;
+  box-shadow: none;
+  transition: background-color 0.2s cubic-bezier(0.2, 0, 0, 1), transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.m3-surface-card:hover {
+  background-color: var(--color-surface-container-highest);
+}
+
+
+/* M3 Prose Overrides */
+/* M3 Prose Overrides - Forcing Light Mode against Tailwind's Auto-Dark Inversion */
+.prose {
+  --tw-prose-body: #49454F !important;
+  --tw-prose-headings: #1C1B1F !important;
+  --tw-prose-links: #6750A4 !important;
+  --tw-prose-bold: #1C1B1F !important;
+  --tw-prose-counters: #79747E !important;
+  --tw-prose-bullets: #6750A4 !important;
+  --tw-prose-hr: #CAC4D0 !important;
+  --tw-prose-quotes: #49454F !important;
+  --tw-prose-quote-borders: #6750A4 !important;
+  --tw-prose-captions: #79747E !important;
+  --tw-prose-code: #21005D !important;
+  --tw-prose-pre-code: #49454F !important;
+  --tw-prose-pre-bg: #F3EDF7 !important;
+  --tw-prose-th-borders: #CAC4D0 !important;
+  --tw-prose-td-borders: #E7E0EC !important;
+
+  /* Overriding Tailwind Typography Dark Mode Hooks */
+  --tw-prose-invert-body: #49454F !important;
+  --tw-prose-invert-headings: #1C1B1F !important;
+  --tw-prose-invert-links: #6750A4 !important;
+  --tw-prose-invert-bold: #1C1B1F !important;
+  --tw-prose-invert-counters: #79747E !important;
+  --tw-prose-invert-bullets: #6750A4 !important;
+  --tw-prose-invert-hr: #CAC4D0 !important;
+  --tw-prose-invert-quotes: #49454F !important;
+  --tw-prose-invert-quote-borders: #6750A4 !important;
+  --tw-prose-invert-captions: #79747E !important;
+  --tw-prose-invert-code: #21005D !important;
+  --tw-prose-invert-pre-code: #49454F !important;
+  --tw-prose-invert-pre-bg: #F3EDF7 !important;
+  --tw-prose-invert-th-borders: #CAC4D0 !important;
+  --tw-prose-invert-td-borders: #E7E0EC !important;
+}
+
+.prose pre {
+  border-radius: 16px;
+  border: 1px solid #e1e2e8;
 }
