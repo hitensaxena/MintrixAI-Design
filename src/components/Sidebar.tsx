@@ -40,20 +40,35 @@ export const MintrixNodeIcon = ({ className = "w-4 h-4" }: { className?: string 
 );
 
 interface SidebarProps {
-  docs: { slug: string; title: string }[];
+  groupedDocs: { category: string; docs: { slug: string; title: string }[] }[];
 }
 
-export default function Sidebar({ docs }: SidebarProps) {
+export default function Sidebar({ groupedDocs }: SidebarProps) {
   const pathname = usePathname();
 
   const getIcon = (title: string) => {
     switch (title) {
       case "Architecture Map": return <Layers className="w-5 h-5" />;
       case "Brain Map": return <Zap className="w-5 h-5" />;
+      case "Confidence and Surface Behavior": return <Shield className="w-5 h-5" />;
+      case "Event Template Definitions and Exception Taxonomy": return <Layout className="w-5 h-5" />;
+      case "Interface - Approval Inbox": return <Shield className="w-5 h-5" />;
+      case "Interface - Daily Feed": return <Zap className="w-5 h-5" />;
+      case "Interface - Exception Center": return <Zap className="w-5 h-5" />;
+      case "Interface - Navigation Model": return <Map className="w-5 h-5" />;
+      case "Interface - Transparency Log": return <BookOpen className="w-5 h-5" />;
+      case "Interface - Workspace Surface": return <Layout className="w-5 h-5" />;
       case "Persona Intelligence Cards": return <User className="w-5 h-5" />;
+      case "Role-Based Dashboard Structure": return <Layers className="w-5 h-5" />;
       case "Screen Inventory and Navigation Model": return <Layout className="w-5 h-5" />;
       case "Setup and Event Architecture": return <Map className="w-5 h-5" />;
+      case "System Operations and User Flow": return <Zap className="w-5 h-5" />;
       case "Trust Approval and Failure Framework": return <Shield className="w-5 h-5" />;
+      case "Workflow - Approval and Transparency": return <Shield className="w-5 h-5" />;
+      case "Workflow - Living Curriculum and Pace": return <BookOpen className="w-5 h-5" />;
+      case "Workflow - Principal Operations and Exceptions": return <Zap className="w-5 h-5" />;
+      case "Workflow - Setup and Calibration": return <Map className="w-5 h-5" />;
+      case "Workflow - Teacher Daily Teaching": return <User className="w-5 h-5" />;
       case "Workflow Priority Map": return <ArrowRightCircle className="w-5 h-5" />;
       case "Workflow and Persona": return <BookOpen className="w-5 h-5" />;
       default: return <BookOpen className="w-5 h-5" />;
@@ -74,35 +89,44 @@ export default function Sidebar({ docs }: SidebarProps) {
       </div>
 
       <div className="flex-1 overflow-y-auto pb-6 px-3 no-scrollbar">
-        <nav className="space-y-1">
-          {docs.map((doc) => {
-            const isActive = pathname === `/docs/${doc.slug}`;
-            return (
-              <Link
-                key={doc.slug}
-                href={`/docs/${doc.slug}`}
-                className={`relative flex items-center gap-3 px-4 py-3.5 rounded-[20px] text-sm font-medium transition-all duration-200 group ${
-                  isActive
-                    ? "text-[#005bc1]"
-                    : "text-[#5a6062] hover:text-[#2d3335] hover:bg-[#dee3e6]/50"
-                }`}
-              >
-                {isActive && (
-                  <motion.div
-                    layoutId="active-sidebar-item"
-                    className="absolute inset-0 bg-[#f1f4f5] rounded-[20px]"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  />
-                )}
-                <div className={`relative z-10 transition-colors ${isActive ? "text-[#005bc1]" : "text-[#5a6062] group-hover:text-[#2d3335]"}`}>
-                  {getIcon(doc.title)}
-                </div>
-                <span className="relative z-10 line-clamp-2">{doc.title}</span>
-              </Link>
-            );
-          })}
+        <nav className="space-y-8">
+          {groupedDocs.map((group) => (
+            <div key={group.category} className="space-y-2">
+              <h3 className="px-4 text-[10px] font-bold text-[#5a6062] uppercase tracking-[0.1em] opacity-70">
+                {group.category}
+              </h3>
+              <div className="space-y-1">
+                {group.docs.map((doc) => {
+                  const isActive = pathname === `/docs/${doc.slug}`;
+                  return (
+                    <Link
+                      key={doc.slug}
+                      href={`/docs/${doc.slug}`}
+                      className={`relative flex items-center gap-3 px-4 py-2.5 rounded-[15px] text-[13px] font-medium transition-all duration-200 group ${
+                        isActive
+                          ? "text-[#005bc1]"
+                          : "text-[#5a6062] hover:text-[#2d3335] hover:bg-[#dee3e6]/50"
+                      }`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="active-sidebar-item"
+                          className="absolute inset-0 bg-[#f1f4f5] rounded-[15px]"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                        />
+                      )}
+                      <div className={`relative z-10 transition-colors ${isActive ? "text-[#005bc1]" : "text-[#5a6062] group-hover:text-[#2d3335]"}`}>
+                        {getIcon(doc.title)}
+                      </div>
+                      <span className="relative z-10 line-clamp-2 leading-snug">{doc.title}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </nav>
       </div>
     </div>

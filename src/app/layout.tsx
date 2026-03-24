@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
-import { getAllDocs } from "@/lib/docs";
+import { getGroupedDocs } from "@/lib/docs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const docs = getAllDocs();
+  const groupedDocs = getGroupedDocs();
   
   return (
     <html
@@ -38,7 +38,7 @@ export default function RootLayout({
           backgroundAttachment: 'fixed'
         }}
       >
-        <Sidebar docs={docs} />
+        <Sidebar groupedDocs={groupedDocs} />
         <main className="flex-1 min-w-0 overflow-y-auto w-full">
           {children}
         </main>
