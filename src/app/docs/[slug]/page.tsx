@@ -34,9 +34,9 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
   }
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto py-12 px-6 lg:px-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <div className="mb-14 pb-8 border-b border-[#CAC4D0]">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[#1C1B1F] mb-2" style={{lineHeight: 1.15}}>
+    <div className="w-full max-w-[1200px] mx-auto py-16 px-6 lg:px-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <div className="mb-16">
+        <h1 className="text-5xl md:text-[3.5rem] font-bold tracking-tight text-[#2d3335] font-plus-jakarta mb-4" style={{lineHeight: 1.15}}>
           {doc.title}
         </h1>
       </div>

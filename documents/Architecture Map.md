@@ -1,5 +1,3 @@
-# Mintrix Surface Architecture Map
-
 ## Purpose
 
 This document defines the core surface types of the Mintrix product before UI screens are designed.

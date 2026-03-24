@@ -1,5 +1,3 @@
-# Mintrix Screen Inventory and Navigation Model
-
 ## Purpose
 
 This document defines the first coherent screen inventory and navigation model for Mintrix.

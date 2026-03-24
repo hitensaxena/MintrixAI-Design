@@ -12,8 +12,8 @@ export default function FeatureGrid({ children }: { children: ReactNode }) {
 
 export function FeatureCard({ title, children }: { title: string, children: ReactNode }) {
   return (
-    <div className="m3-surface-card p-6 h-full flex flex-col relative group">
-      <h3 className="text-xl font-bold text-[#1C1B1F] mb-4 pb-4 border-b border-[#CAC4D0] mt-0">
+    <div className="m3-surface-card p-8 h-full flex flex-col relative group">
+      <h3 className="text-2xl font-bold text-[#2d3335] font-plus-jakarta mb-6 mt-0">
         {title}
       </h3>
       <div className="prose prose-sm max-w-none prose-ul:mt-0 prose-ul:mb-0 relative z-10">

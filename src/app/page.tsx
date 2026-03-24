@@ -20,35 +20,35 @@ export default function Home() {
   };
 
   return (
-    <div className="relative w-full min-h-screen max-w-[1200px] mx-auto py-20 px-6 lg:px-12">
-      <div className="text-center max-w-3xl mx-auto mb-20 space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <div className="inline-flex items-center justify-center p-5 mb-4 rounded-3xl bg-[#EADDFF] text-[#21005D] shadow-sm">
+    <div className="relative w-full min-h-screen max-w-[1200px] mx-auto py-24 px-6 lg:px-12">
+      <div className="flex flex-col items-start max-w-4xl mb-24 space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <div className="inline-flex items-center justify-center p-5 mb-2 rounded-[24px] m3-signature-gradient text-white shadow-sm">
           <Zap className="w-10 h-10" />
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#1C1B1F] mb-6">
+        <h1 className="text-6xl md:text-[5.5rem] font-bold tracking-tight text-[#2d3335] font-plus-jakarta leading-[1.1] mb-6">
           Mintrix AI Design System
         </h1>
-        <p className="text-xl md:text-2xl text-[#49454F] leading-relaxed font-normal">
+        <p className="text-xl md:text-2xl text-[#5a6062] leading-relaxed font-normal max-w-2xl">
           Explore the architecture, intelligent models, and comprehensive workflows behind Mintrix AI.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {docs.map((doc, i) => (
           <Link
             key={doc.slug}
             href={`/docs/${doc.slug}`}
-            className="group flex flex-col p-8 bg-[#F3EDF7] rounded-[24px] hover:bg-[#E6E0E9] transition-colors duration-300 h-full"
+            className="group flex flex-col p-10 m3-surface-card h-full"
           >
-            <div className="mb-6 w-14 h-14 flex items-center justify-center rounded-2xl bg-[#FFFBFE] text-[#6750A4] group-hover:bg-[#EADDFF] group-hover:text-[#21005D] transition-colors duration-300">
+            <div className="mb-8 w-14 h-14 flex items-center justify-center rounded-[20px] bg-[#f1f4f5] text-[#005bc1] group-hover:m3-signature-gradient group-hover:text-[#ffffff] transition-all duration-300">
               {getIcon(doc.title)}
             </div>
             
-            <h2 className="text-xl font-bold text-[#1C1B1F] mb-3">
+            <h2 className="text-2xl font-bold text-[#2d3335] font-plus-jakarta mb-4">
               {doc.title}
             </h2>
             
-            <div className="mt-auto pt-6 flex items-center text-sm font-bold tracking-wide text-[#6750A4] transition-colors duration-300 group-hover:underline">
+            <div className="mt-auto pt-8 flex items-center text-sm font-bold tracking-wide text-[#005bc1] transition-colors duration-300 group-hover:underline">
               Explore <ArrowRightCircle className="w-4 h-4 ml-1.5" />
             </div>
           </Link>

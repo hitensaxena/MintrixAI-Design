@@ -61,13 +61,13 @@ export default function Sidebar({ docs }: SidebarProps) {
   };
 
   return (
-    <div className="w-72 hidden md:flex flex-col h-screen sticky top-0 bg-[#F3EDF7]">
+    <div className="w-72 hidden md:flex flex-col h-screen sticky top-0 bg-[#f8f9fa]">
       <div className="p-6">
         <Link href="/" className="flex items-center gap-3 ml-2 mt-4">
           <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
             <MintrixNodeIcon className="w-full h-full" />
           </div>
-          <h1 className="text-xl font-medium text-[#1C1B1F]">
+          <h1 className="text-xl font-medium font-plus-jakarta text-[#2d3335]">
             Mintrix.ai Design
           </h1>
         </Link>
@@ -81,22 +81,22 @@ export default function Sidebar({ docs }: SidebarProps) {
               <Link
                 key={doc.slug}
                 href={`/docs/${doc.slug}`}
-                className={`relative flex items-center gap-3 px-4 py-3.5 rounded-full text-sm font-medium transition-all duration-200 group ${
+                className={`relative flex items-center gap-3 px-4 py-3.5 rounded-[20px] text-sm font-medium transition-all duration-200 group ${
                   isActive
-                    ? "text-[#1D192B]"
-                    : "text-[#49454F] hover:text-[#1C1B1F] hover:bg-[#1C1B1F]/[0.08]"
+                    ? "text-[#005bc1]"
+                    : "text-[#5a6062] hover:text-[#2d3335] hover:bg-[#dee3e6]/50"
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="active-sidebar-item"
-                    className="absolute inset-0 bg-[#E8DEF8] rounded-full"
+                    className="absolute inset-0 bg-[#f1f4f5] rounded-[20px]"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                   />
                 )}
-                <div className={`relative z-10 transition-colors ${isActive ? "text-[#1D192B]" : "text-[#49454F] group-hover:text-[#1C1B1F]"}`}>
+                <div className={`relative z-10 transition-colors ${isActive ? "text-[#005bc1]" : "text-[#5a6062] group-hover:text-[#2d3335]"}`}>
                   {getIcon(doc.title)}
                 </div>
                 <span className="relative z-10 line-clamp-2">{doc.title}</span>

@@ -1,5 +1,3 @@
-# Mintrix Workflow Priority Map
-
 ## Purpose
 
 This document defines which workflows should be prioritized before UI screen design begins.

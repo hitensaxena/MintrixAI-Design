@@ -1,5 +1,3 @@
-# Mintrix Setup and Event Architecture Map
-
 ## Purpose
 
 This document maps the setup and event architecture of Mintrix as a first-class system layer.

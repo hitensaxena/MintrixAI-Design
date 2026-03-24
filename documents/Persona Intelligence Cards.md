@@ -1,5 +1,3 @@
-# Mintrix Persona Intelligence Cards
-
 ## Purpose
 
 These persona cards define how Mintrix should think for each primary stakeholder.

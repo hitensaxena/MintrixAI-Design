@@ -1,5 +1,3 @@
-# Mintrix Autonomy Matrix by Workflow and Persona
-
 ## Purpose
 
 This document defines how Mintrix should distribute work between humans and AI across the major school workflows.

@@ -11,18 +11,18 @@ interface SurfaceCardProps {
 
 export default function SurfaceCard({ title, roles, children }: SurfaceCardProps) {
   return (
-    <div className="w-full my-8 m3-surface-card p-6 md:p-8 relative flex flex-col group">
+    <div className="w-full my-10 m3-surface-card p-8 md:p-12 relative flex flex-col group">
       
-      <div className="flex flex-col md:flex-row gap-6 mb-6">
+      <div className="flex flex-col md:flex-row gap-6 mb-8">
         <div className="flex-1">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1C1B1F] m-0 pb-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2d3335] font-plus-jakarta m-0 pb-2">
             {title}
           </h2>
           {roles && roles.length > 0 && (
-            <div className="flex flex-wrap gap-2 mt-3">
-              <Users className="w-4 h-4 text-[#6750A4] my-auto mr-1" />
+            <div className="flex flex-wrap gap-2 mt-4">
+              <Users className="w-4 h-4 text-[#005bc1] my-auto mr-1" />
               {roles.map((role, idx) => (
-                <span key={idx} className="px-3 py-1 bg-[#E8DEF8] text-[#1D192B] text-xs font-bold tracking-wide rounded-full">
+                <span key={idx} className="px-3 py-1 bg-[#f1f4f5] text-[#005bc1] text-xs font-bold tracking-wide rounded-full">
                   {role}
                 </span>
               ))}

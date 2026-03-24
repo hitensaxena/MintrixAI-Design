@@ -1,5 +1,3 @@
-# Mintrix System Brain Map v2
-
 ## Purpose
 
 This document is the v2 system brain map for Mintrix. It is meant to align product, design, and engineering on the full cognitive shape of the app before detailed UI design begins.

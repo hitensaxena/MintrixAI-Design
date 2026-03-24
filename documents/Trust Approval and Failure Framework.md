@@ -1,5 +1,3 @@
-# Mintrix Trust, Approval, and Failure Framework
-
 ## Purpose
 
 This document defines how Mintrix should earn trust before UI screens are designed.
