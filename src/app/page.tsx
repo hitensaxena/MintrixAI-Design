@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getGroupedDocs } from '@/lib/docs';
 import { BookOpen, Layers, Zap, Shield, User, Map, Layout, ArrowRightCircle } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   const groupedDocs = getGroupedDocs();
@@ -37,8 +38,8 @@ export default function Home() {
   return (
     <div className="relative w-full min-h-screen max-w-[1200px] mx-auto py-24 px-6 lg:px-12">
       <div className="flex flex-col items-start max-w-4xl mb-24 space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <div className="inline-flex items-center justify-center p-5 mb-2 rounded-[24px] m3-signature-gradient text-white shadow-sm">
-          <Zap className="w-10 h-10" />
+        <div className="inline-flex items-center justify-center mb-2 rounded-[6px] w-[88px] h-[88px] relative shadow-2xl overflow-hidden">
+          <Image src="/logo.png" alt="Mintrix Logo" fill className="object-cover" priority />
         </div>
         <h1 className="text-6xl md:text-[5.5rem] font-bold tracking-tight text-[#2d3335] font-plus-jakarta leading-[1.1] mb-6">
           Mintrix AI Design System
