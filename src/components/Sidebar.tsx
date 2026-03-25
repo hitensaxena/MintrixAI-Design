@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -13,44 +14,56 @@ export const MintrixNodeIcon = ({ className = "w-4 h-4" }: { className?: string 
 );
 
 interface SidebarProps {
-  groupedDocs: { category: string; docs: { slug: string; title: string }[] }[];
+  groupedDocs: { superCategory: 'Product' | 'Design'; category: string; docs: { slug: string; title: string }[] }[];
 }
 
 export default function Sidebar({ groupedDocs }: SidebarProps) {
   const pathname = usePathname();
+  const [activeMode, setActiveMode] = useState<"Product" | "Design">("Product");
 
   const getIcon = (title: string) => {
     switch (title) {
-      case "Architecture Map": return <Layers className="w-5 h-5" />;
-      case "Brain Map": return <Zap className="w-5 h-5" />;
+      case "Product Brief": return <Layers className="w-5 h-5" />;
       case "Confidence and Surface Behavior": return <Shield className="w-5 h-5" />;
-      case "Event Template Definitions and Exception Taxonomy": return <Layout className="w-5 h-5" />;
-      case "Interface - Approval Inbox": return <Shield className="w-5 h-5" />;
-      case "Interface - Daily Feed": return <Zap className="w-5 h-5" />;
-      case "Interface - Exception Center": return <Zap className="w-5 h-5" />;
-      case "Interface - Navigation Model": return <Map className="w-5 h-5" />;
-      case "Interface - Transparency Log": return <BookOpen className="w-5 h-5" />;
-      case "Interface - Workspace Surface": return <Layout className="w-5 h-5" />;
+      case "Policies, Trust and Governance": return <Shield className="w-5 h-5" />;
+      case "Setup, Tuning, Setting and Maintainance of Intelligence": return <Zap className="w-5 h-5" />;
+      case "Persona Agents": return <User className="w-5 h-5" />;
+      case "Daily Feed": return <Zap className="w-5 h-5" />;
+      case "Approval Inbox": return <Shield className="w-5 h-5" />;
+      case "Exception Center": return <Shield className="w-5 h-5" />;
+      case "Transparency Log": return <Layout className="w-5 h-5" />;
+      case "Role-based Dashboard": return <Layers className="w-5 h-5" />;
+      case "Workspace": return <Layout className="w-5 h-5" />;
+      case "User Profile and Settings": return <User className="w-5 h-5" />;
+      case "Event Cards": return <Layout className="w-5 h-5" />;
+      case "Primary Navigation": return <Map className="w-5 h-5" />;
+      case "Surface-based Navigation": return <Map className="w-5 h-5" />;
       case "Persona Intelligence Cards": return <User className="w-5 h-5" />;
-      case "Role-Based Dashboard Structure": return <Layers className="w-5 h-5" />;
+      case "Approval and Transparency": return <Shield className="w-5 h-5" />;
+      case "Tuning and Policies": return <Zap className="w-5 h-5" />;
+      case "Setup and Onboarding": return <Layers className="w-5 h-5" />;
+      case "Living Curriculum And Pace": return <BookOpen className="w-5 h-5" />;
+      case "Teacher daily teaching": return <BookOpen className="w-5 h-5" />;
+      case "Principal Operations and Exceptions": return <Shield className="w-5 h-5" />;
+      case "Admin Operations and Exceptions": return <Zap className="w-5 h-5" />;
+      case "Students Workflows": return <User className="w-5 h-5" />;
+      case "Brand Guidelines": return <Layout className="w-5 h-5" />;
+      case "Setup Architecture": return <Map className="w-5 h-5" />;
+      case "System Architecture": return <Layers className="w-5 h-5" />;
+      case "Event Architecture": return <Layout className="w-5 h-5" />;
+      case "Persona AI Agent Architecture": return <Zap className="w-5 h-5" />;
+      case "Intelligence Layer Processor Architecture": return <Zap className="w-5 h-5" />;
+      case "Living Curriculum State Architecture": return <BookOpen className="w-5 h-5" />;
+      case "Policies, Settings and Autonomy Architecture": return <Shield className="w-5 h-5" />;
       case "Screen Inventory and Navigation Model": return <Layout className="w-5 h-5" />;
-      case "Setup and Event Architecture": return <Map className="w-5 h-5" />;
-      case "System Operations and User Flow": return <Zap className="w-5 h-5" />;
-      case "Trust Approval and Failure Framework": return <Shield className="w-5 h-5" />;
-      case "Workflow - Approval and Transparency": return <Shield className="w-5 h-5" />;
-      case "Workflow - Living Curriculum and Pace": return <BookOpen className="w-5 h-5" />;
-      case "Workflow - Principal Operations and Exceptions": return <Zap className="w-5 h-5" />;
-      case "Workflow - Setup and Calibration": return <Map className="w-5 h-5" />;
-      case "Workflow - Teacher Daily Teaching": return <User className="w-5 h-5" />;
-      case "Workflow Priority Map": return <ArrowRightCircle className="w-5 h-5" />;
-      case "Workflow and Persona": return <BookOpen className="w-5 h-5" />;
+      case "System Operations": return <Zap className="w-5 h-5" />;
       default: return <BookOpen className="w-5 h-5" />;
     }
   };
 
   return (
     <div className="w-72 hidden md:flex flex-col h-screen sticky top-0 bg-[#f8f9fa]">
-      <div className="p-6">
+      <div className="p-6 pb-2">
         <Link href="/" className="flex items-center gap-3 ml-2 mt-4">
           <div className="w-8 h-8 rounded-[6px] flex items-center justify-center overflow-hidden shadow-sm">
             <MintrixNodeIcon className="w-full h-full" />
@@ -61,9 +74,32 @@ export default function Sidebar({ groupedDocs }: SidebarProps) {
         </Link>
       </div>
 
+      <div className="px-6 pb-4">
+        <div className="flex items-center bg-[#eef1f3] rounded-[10px] p-1 mt-4">
+          <button
+            onClick={() => setActiveMode("Product")}
+            className={`flex-1 flex items-center justify-center py-1.5 text-[12px] font-bold tracking-wide rounded-[8px] transition-all duration-200 ${
+              activeMode === "Product" ? "bg-white text-[#2d3335] shadow-sm" : "text-[#8a9296] hover:text-[#5a6062]"
+            }`}
+          >
+            Product
+          </button>
+          <button
+            onClick={() => setActiveMode("Design")}
+            className={`flex-1 flex items-center justify-center py-1.5 text-[12px] font-bold tracking-wide rounded-[8px] transition-all duration-200 ${
+              activeMode === "Design" ? "bg-white text-[#2d3335] shadow-sm" : "text-[#8a9296] hover:text-[#5a6062]"
+            }`}
+          >
+            Design
+          </button>
+        </div>
+      </div>
+
       <div className="flex-1 overflow-y-auto pb-6 px-3 no-scrollbar">
         <nav className="space-y-8">
-          {groupedDocs.map((group) => (
+          {groupedDocs
+            .filter((group) => group.superCategory === activeMode)
+            .map((group) => (
             <div key={group.category} className="space-y-2">
               <h3 className="px-4 text-[10px] font-bold text-[#5a6062] uppercase tracking-[0.1em] opacity-70">
                 {group.category}

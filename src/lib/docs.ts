@@ -10,6 +10,7 @@ export interface DocMeta {
 }
 
 export interface DocGroup {
+  superCategory: 'Product' | 'Design';
   category: string;
   docs: DocMeta[];
 }
@@ -20,29 +21,53 @@ export function getAllDocs(): DocMeta[] {
   
   // Exclude AGENTS.md, CLAUDE.md, README.md and only include relevant ones
   const allowedDocs = [
-    "Architecture Map.md", 
-    "Brain Map.md", 
+    "Product Brief.md", 
     "Confidence and Surface Behavior.md",
-    "Event Template Definitions and Exception Taxonomy.md",
-    "Interface - Approval Inbox.md",
-    "Interface - Daily Feed.md",
-    "Interface - Exception Center.md",
-    "Interface - Navigation Model.md",
-    "Interface - Transparency Log.md",
-    "Interface - Workspace Surface.md",
+    "Setup Architecture.md",
+    "System Architecture.md",
+    "Event Architecture.md",
+    "Persona AI Agent Architecture.md",
+    "Intelligence Layer Processor Architecture.md",
+    "Living Curriculum State Architecture.md",
+    "Policies, Settings and Autonomy Architecture.md",
+    "Screen Inventory and Navigation Model.md",
+    "System Operations.md",
+    "Confidence and Surface Behavior.md",
+    "Policies, Trust and Governance.md",
+    "Setup, Tuning, Setting and Maintainance of Intelligence.md",
+    "Persona Agents.md",
+    "Daily Feed.md",
+    "Approval Inbox.md",
+    "Exception Center.md",
+    "Transparency Log.md",
+    "Role-based Dashboard.md",
+    "Workspace.md",
+    "User Profile and Settings.md",
+    "Event Cards.md",
+    "Primary Navigation.md",
+    "Surface-based Navigation.md",
     "Persona Intelligence Cards.md", 
-    "Role-Based Dashboard Structure.md",
-    "Screen Inventory and Navigation Model.md", 
-    "Setup and Event Architecture.md", 
-    "System Operations and User Flow.md",
-    "Trust Approval and Failure Framework.md", 
-    "Workflow - Approval and Transparency.md",
-    "Workflow - Living Curriculum and Pace.md",
-    "Workflow - Principal Operations and Exceptions.md",
-    "Workflow - Setup and Calibration.md",
-    "Workflow - Teacher Daily Teaching.md",
-    "Workflow Priority Map.md", 
-    "Workflow and Persona.md"
+    "Approval and Transparency.md",
+    "Tuning and Policies.md",
+    "Setup and Onboarding.md",
+    "Living Curriculum And Pace.md",
+    "Teacher daily teaching.md",
+    "Principal Operations and Exceptions.md",
+    "Admin Operations and Exceptions.md",
+    "Students Workflows.md",
+    "Design Foundation and Philosophy.md",
+    "User Personas and Journeys.md",
+    "Agent Personas and Journeys.md",
+    "Teacher Grading and Intervention Flow.md",
+    "Parent Communication and Consent Flow.md",
+    "Admin Substrate Setup Flow.md",
+    "Core Event Spawning Flow.md",
+    "High-Stakes Approval Flow.md",
+    "Principal Triage Flow.md",
+    "Color Architecture.md",
+    "Typography and Spacing.md",
+    "Voice and Tone.md",
+    "Interface Components.md"
   ];
 
   return fileNames
@@ -62,58 +87,124 @@ export function getAllDocs(): DocMeta[] {
 export function getGroupedDocs(): DocGroup[] {
   const allDocs = getAllDocs();
 
-  const groups = [
+  const groups: { superCategory: 'Product' | 'Design'; category: string; docTitles: string[] }[] = [
     {
+      superCategory: "Product",
       category: "Foundations",
       docTitles: [
-        "Brain Map",
-        "Architecture Map",
+        "Product Brief",
         "Persona Intelligence Cards",
-        "Workflow and Persona"
+        "Workflow Management"
       ]
     },
     {
+      superCategory: "Product",
       category: "System Architecture",
       docTitles: [
-        "System Operations and User Flow",
-        "Setup and Event Architecture",
-        "Event Template Definitions and Exception Taxonomy",
-        "Screen Inventory and Navigation Model"
+        "Setup Architecture",
+        "System Architecture",
+        "Event Architecture",
+        "Persona AI Agent Architecture",
+        "Intelligence Layer Processor Architecture",
+        "Living Curriculum State Architecture",
+        "Policies, Settings and Autonomy Architecture",
+        "Screen Inventory and Navigation Model",
+        "System Operations"
       ]
     },
     {
-      category: "Trust & Intelligence",
+      superCategory: "Product",
+      category: "Trust and Intelligence",
       docTitles: [
-        "Trust Approval and Failure Framework",
-        "Confidence and Surface Behavior"
+        "Confidence and Surface Behavior",
+        "Policies, Trust and Governance",
+        "Setup, Tuning, Setting and Maintainance of Intelligence",
+        "Persona Agents"
       ]
     },
     {
-      category: "Core Workflows",
+      superCategory: "Product",
+      category: "Workflows",
       docTitles: [
-        "Workflow Priority Map",
-        "Workflow - Teacher Daily Teaching",
-        "Workflow - Living Curriculum and Pace",
-        "Workflow - Principal Operations and Exceptions",
-        "Workflow - Setup and Calibration",
-        "Workflow - Approval and Transparency"
+        "Approval and Transparency",
+        "Tuning and Policies",
+        "Setup and Onboarding",
+        "Living Curriculum And Pace",
+        "Teacher daily teaching",
+        "Principal Operations and Exceptions",
+        "Admin Operations and Exceptions",
+        "Students Workflows"
       ]
     },
     {
-      category: "Interface Structure",
+      superCategory: "Design",
+      category: "Design Foundation",
       docTitles: [
-        "Interface - Navigation Model",
-        "Interface - Daily Feed",
-        "Interface - Approval Inbox",
-        "Interface - Exception Center",
-        "Interface - Workspace Surface",
-        "Interface - Transparency Log",
-        "Role-Based Dashboard Structure"
+        "Design Foundation and Philosophy"
+      ]
+    },
+    {
+      superCategory: "Design",
+      category: "Personas and Journey",
+      docTitles: [
+        "User Personas and Journeys",
+        "Agent Personas and Journeys"
+      ]
+    },
+    {
+      superCategory: "Design",
+      category: "Useflows",
+      docTitles: [
+        "Core Event Spawning Flow",
+        "High-Stakes Approval Flow",
+        "Principal Triage Flow",
+        "Teacher Grading and Intervention Flow",
+        "Parent Communication and Consent Flow",
+        "Admin Substrate Setup Flow"
+      ]
+    },
+    {
+      superCategory: "Design",
+      category: "Design System",
+      docTitles: [
+        "Color Architecture",
+        "Typography and Spacing",
+        "Voice and Tone",
+        "Interface Components"
+      ]
+    },
+    {
+      superCategory: "Design",
+      category: "Surfaces",
+      docTitles: [
+        "Daily Feed",
+        "Approval Inbox",
+        "Exception Center",
+        "Transparency Log",
+        "Role-based Dashboard",
+        "Workspace",
+        "User Profile and Settings"
+      ]
+    },
+    {
+      superCategory: "Design",
+      category: "Components",
+      docTitles: [
+        "Event Cards"
+      ]
+    },
+    {
+      superCategory: "Design",
+      category: "Navigation",
+      docTitles: [
+        "Primary Navigation",
+        "Surface-based Navigation"
       ]
     }
   ];
 
   return groups.map(group => ({
+    superCategory: group.superCategory,
     category: group.category,
     docs: allDocs.filter(doc => group.docTitles.includes(doc.title))
   }));

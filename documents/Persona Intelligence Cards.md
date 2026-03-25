@@ -71,9 +71,9 @@ Help the owner see institutional health early, compare campuses clearly, and int
 
 ### Best surfaces
 
-- executive briefings
-- risk digest
-- strategic exceptions board
+- `Role-based Dashboard`
+- `Exception Center`
+- `Transparency Log`
 </SurfaceCard>
 
 ---
@@ -126,10 +126,10 @@ Help the principal keep the school coherent across academics, operations, staff,
 
 ### Best surfaces
 
-- morning briefing
-- approval inbox
-- exception dashboard
-- transparency log
+- `Role-based Dashboard`
+- `Approval Inbox`
+- `Exception Center`
+- `Transparency Log`
 </SurfaceCard>
 
 ---
@@ -185,10 +185,10 @@ Help the admin team keep the school operationally synchronized with less manual 
 
 ### Best surfaces
 
-- operations workspace
-- queue views
-- approval inbox
-- event command screens
+- `Workspace`
+- `Approval Inbox`
+- `Exception Center`
+- `Transparency Log`
 </SurfaceCard>
 
 ---
@@ -245,11 +245,9 @@ Help the teacher teach with context, stay ahead of syllabus risk, and act early 
 
 ### Best surfaces
 
-- daily teaching dashboard
-- content feed
-- AI recommendations
-- student signals
-- approval and transparency panels
+- `Daily Feed`
+- `Workspace`
+- `Approval Inbox`
 </SurfaceCard>
 
 ---
@@ -302,10 +300,8 @@ Help the student understand what matters now, where they are weak, and how to im
 
 ### Best surfaces
 
-- learning feed
-- AI tutor
-- revision cards
-- progress and readiness views
+- `Daily Feed`
+- `Workspace`
 </SurfaceCard>
 
 ---
@@ -358,10 +354,9 @@ Help the parent feel informed, reassured, and able to act without chasing the sc
 
 ### Best surfaces
 
-- parent feed
-- notice center
-- payment and consent flows
-- child progress summary
+- `Daily Feed`
+- `Workspace`
+- `User Profile and Settings`
 </SurfaceCard>
 
 ---
