@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Workflows - The Tactile Gallery</title>
+<!-- Font and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1a",
+              "primary-container": "#a7dbbf",
+              "tertiary-container": "#ffc1b4",
+              "on-tertiary-fixed": "#32110b",
+              "secondary-container": "#d2e8da",
+              "on-secondary": "#ffffff",
+              "surface-variant": "#e2e3df",
+              "surface-container-highest": "#e2e3df",
+              "inverse-on-surface": "#f0f1ed",
+              "on-primary-fixed-variant": "#1e4f3a",
+              "surface-tint": "#376851",
+              "on-surface-variant": "#414943",
+              "on-secondary-fixed": "#0d1f17",
+              "inverse-surface": "#2e312f",
+              "on-tertiary-fixed-variant": "#663b32",
+              "secondary-fixed-dim": "#b7cbbe",
+              "secondary-fixed": "#d2e8da",
+              "surface-bright": "#f9faf6",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#717973",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e7e9e5",
+              "on-tertiary-container": "#7b4d43",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#384b41",
+              "surface": "#f9faf6",
+              "tertiary-fixed": "#ffdad3",
+              "surface-container": "#edeeeb",
+              "on-background": "#191c1a",
+              "surface-dim": "#d9dad7",
+              "secondary": "#506358",
+              "inverse-primary": "#9ed2b6",
+              "surface-container-low": "#f3f4f0",
+              "tertiary": "#815248",
+              "primary": "#376851",
+              "on-error": "#ffffff",
+              "on-primary-fixed": "#002114",
+              "error": "#ba1a1a",
+              "outline-variant": "#c0c9c2",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#31624b",
+              "tertiary-fixed-dim": "#f5b8ab",
+              "primary-fixed": "#baeed1",
+              "primary-fixed-dim": "#9ed2b6",
+              "on-secondary-container": "#56695e",
+              "on-tertiary": "#ffffff",
+              "background": "#f9faf6"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased selection:bg-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8faf9]/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto w-full">
+<div class="text-2xl font-bold tracking-tighter text-[#181d1b]">The Tactile Gallery</div>
+<div class="hidden md:flex items-center gap-10 font-['Plus_Jakarta_Sans'] text-body-lg tracking-tight">
+<a class="text-[#181d1b] font-medium hover:text-[#508169] transition-all duration-300" href="#">Product</a>
+<a class="text-[#508169] font-bold border-b-2 border-[#508169] pb-1 hover:text-[#508169] transition-all duration-300" href="#">Design</a>
+<a class="text-[#181d1b] font-medium hover:text-[#508169] transition-all duration-300" href="#">Updates</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="scale-95 active:scale-90 transition-transform p-2 text-[#508169]">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="scale-95 active:scale-90 transition-transform p-2 text-[#508169]">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen pt-[88px]">
+<!-- SideNavBar -->
+<aside class="h-screen w-72 rounded-r-[2rem] sticky top-[88px] bg-[#eaefee] flex flex-col gap-4 p-8 shadow-[32px_0_32px_-16px_rgba(24,29,27,0.04)] hidden md:flex">
+<div class="mb-6">
+<div class="text-lg font-black text-[#181d1b]">System Core</div>
+<div class="font-['Plus_Jakarta_Sans'] text-label-md uppercase tracking-widest text-[#181d1b]/60 opacity-70">Documentation Hub</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="text-[#181d1b]/60 px-6 py-3 hover:bg-[#f8faf9]/50 rounded-full hover:translate-x-1 transition-transform duration-200 cursor-pointer font-['Plus_Jakarta_Sans'] text-label-md uppercase tracking-widest" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="architecture">architecture</span>
+                        Foundations
+                    </div>
+</a>
+<a class="text-[#181d1b]/60 px-6 py-3 hover:bg-[#f8faf9]/50 rounded-full hover:translate-x-1 transition-transform duration-200 cursor-pointer font-['Plus_Jakarta_Sans'] text-label-md uppercase tracking-widest" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="widgets">widgets</span>
+                        Components
+                    </div>
+</a>
+<a class="text-[#181d1b]/60 px-6 py-3 hover:bg-[#f8faf9]/50 rounded-full hover:translate-x-1 transition-transform duration-200 cursor-pointer font-['Plus_Jakarta_Sans'] text-label-md uppercase tracking-widest" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+                        Patterns
+                    </div>
+</a>
+<a class="bg-[#d5eedd] text-[#508169] rounded-full px-6 py-3 font-bold cursor-pointer font-['Plus_Jakarta_Sans'] text-label-md uppercase tracking-widest" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+                        Workflows
+                    </div>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-bold hover:opacity-90 transition-opacity">
+                    View Github
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto no-scrollbar bg-surface">
+<!-- Hero Section: Editorial Style -->
+<section class="relative px-12 pt-16 pb-24 flex flex-col md:flex-row gap-12 items-center overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-bold text-sm tracking-wide mb-6 uppercase">System Documentation</span>
+<h1 class="text-7xl font-extrabold tracking-tighter text-on-surface leading-none mb-8">
+                        The Logic of <br/><span class="text-primary italic">Movement.</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant leading-relaxed opacity-80 max-w-lg mb-10">
+                        Explore the curated paths designed for human-AI interaction. Our workflows prioritize tactile feedback and structural clarity over rigid step-based logic.
+                    </p>
+<div class="flex gap-4">
+<button class="px-8 py-4 bg-primary text-on-primary rounded-full font-bold hover:shadow-xl transition-all">Explore Blueprint</button>
+<button class="px-8 py-4 bg-surface-container-high text-on-surface-variant rounded-full font-bold">API Reference</button>
+</div>
+</div>
+<div class="relative flex-1 w-full aspect-square md:aspect-auto h-[500px]">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-container/40 to-tertiary-container/30 rounded-[4rem] -rotate-3"></div>
+<img alt="Abstract visual" class="absolute inset-0 w-full h-full object-cover rounded-[3.5rem] shadow-2xl z-10 translate-x-4 translate-y-4" data-alt="Abstract 3D rendering of flowing metallic glass tubes and glowing translucent paths representing interconnected digital logic and user flows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCugeG2snDjYEY-dZj4RSA_XmREtlviTvLJtwSktLwZ4x0T7zNYQzqAPMqF4S5cHlbqL4WnJ83bvuj9XPSFipcJ7Y6bSrFSI2v80W2evtLbYKOgUBjBez1XxudAvNjBRb4Mkol6ttJSdpuuLqO38ZUsSIVYdpZuWO883ZMJf7CXOAvp7uEWku77aqgQEESQN0u_2xvp9ulUVxE8amw8nbwuo5fyUxJ0IsZAUTfEW9PyRpKc_63yw2FkZTLUjm4EKY_A1nC5uDLAJ-8"/>
+</div>
+</section>
+<!-- Standard Workflows Grid -->
+<section class="px-12 py-24 bg-surface-container-low">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-4xl font-bold tracking-tight mb-2">Standard Workflows</h2>
+<p class="text-on-surface-variant opacity-60">The structural pillars of Mintrix AI orchestration.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Authentication Card: Asymmetric Wide -->
+<div class="md:col-span-7 bg-surface-container-lowest p-10 rounded-lg flex flex-col justify-between group cursor-pointer hover:bg-surface-bright transition-colors">
+<div>
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="lock_open">lock_open</span>
+</div>
+<h3 class="text-3xl font-bold mb-4">Authentication</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-md">Seamless biometric-first handshakes between user agents and the Mintrix core. Zero-knowledge proofs integrated as standard.</p>
+</div>
+<div class="mt-12 flex items-center text-primary font-bold gap-2">
+                            View Auth Protocol <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<!-- Content Creation: Portrait -->
+<div class="md:col-span-5 bg-tertiary-container/20 p-10 rounded-lg flex flex-col">
+<div class="mb-10 rounded-2xl overflow-hidden aspect-video relative">
+<img alt="Content flow" class="w-full h-full object-cover" data-alt="Macro photography of colored sand patterns in swirling waves with soft pastel tones of mint and peach under studio light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOq5BzGK-3I-bZyO7kxqkpE2cL31Mv5fNZtDUYiCvqxUwkt_1PkoSzt4FoW6LMpR6s04UrhG2PsFT5EEDJ-_GOVkd4WDKbckXl7HcJYts-F7iAK2CR55Mow7R3DpCbMAxCTifP3SvcqKpCunbOsdbcQOGxTFdk2uq5qOXcj6Y6zAtbuTy0kEtQFK8k0Spou5EeTufAX_IvrC8vgYk0kYw3ygLJgHjnqI_0PPG6NKcIJrj0MND3d1IhFsdqwh8DiE1OsFGxcwS8CwU"/>
+</div>
+<h3 class="text-2xl font-bold mb-4">Content Creation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">The generative engine workflow. From semantic intent to high-fidelity multimedia output in a single orchestration loop.</p>
+<button class="mt-auto py-3 border-2 border-on-tertiary-container/20 text-on-tertiary-container font-bold rounded-full">Documentation</button>
+</div>
+<!-- Reporting & Analytics: Long Vertical Inset -->
+<div class="md:col-span-4 bg-secondary-container/30 p-10 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6" data-icon="analytics">analytics</span>
+<h3 class="text-2xl font-bold mb-4">Reporting &amp; Analytics</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-12">Visualizing the logic paths. Real-time telemetry on every token processed and Every decision made by the system.</p>
+<div class="space-y-4">
+<div class="h-1 w-full bg-secondary/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4"></div>
+</div>
+<div class="h-1 w-full bg-secondary/20 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/2"></div>
+</div>
+</div>
+</div>
+<!-- Editorial Inset Module -->
+<div class="md:col-span-8 bg-surface-container-high rounded-lg p-12 flex items-center relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-label-md uppercase tracking-[0.2em] text-primary mb-4 font-bold">Featured Workflow</h4>
+<blockquote class="text-3xl font-medium tracking-tight text-on-surface max-w-lg mb-8 italic">
+                                "The true power of Mintrix isn't the AI—it's the way we allow logic to fold back on itself to create sentient design loops."
+                            </blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed"></div>
+<div>
+<div class="font-bold">Elias Vance</div>
+<div class="text-sm opacity-60">Lead Architect</div>
+</div>
+</div>
+</div>
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Technical Depth: Workflow Logic -->
+<section class="px-12 py-32 bg-surface">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-5xl font-extrabold tracking-tighter mb-6">Blueprint Overview</h2>
+<div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="space-y-12">
+<!-- Step 1 -->
+<div class="flex gap-12 group">
+<div class="flex-shrink-0 w-20 text-7xl font-black text-surface-container-high transition-colors group-hover:text-primary-container">01</div>
+<div class="flex-1 pt-4">
+<h4 class="text-2xl font-bold mb-3">Intent Capturing</h4>
+<p class="text-on-surface-variant leading-relaxed opacity-80">We utilize multi-modal transformers to decode the latent intent behind user inputs, mapping them to the Mintrix Semantic Grid.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-12 group">
+<div class="flex-shrink-0 w-20 text-7xl font-black text-surface-container-high transition-colors group-hover:text-primary-container">02</div>
+<div class="flex-1 pt-4">
+<h4 class="text-2xl font-bold mb-3">Orchestration Layer</h4>
+<p class="text-on-surface-variant leading-relaxed opacity-80">The engine selects the optimal series of micro-services and LLM calls to execute the complex logic flow requested by the user.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-12 group">
+<div class="flex-shrink-0 w-20 text-7xl font-black text-surface-container-high transition-colors group-hover:text-primary-container">03</div>
+<div class="flex-1 pt-4">
+<h4 class="text-2xl font-bold mb-3">Refinement Loop</h4>
+<p class="text-on-surface-variant leading-relaxed opacity-80">Before final delivery, the output passes through a reinforcement learning filter to ensure brand alignment and technical accuracy.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container px-12 py-16 text-on-surface-variant text-sm">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 font-bold text-on-surface">
+<div class="w-8 h-8 bg-primary rounded-lg"></div>
+                        Mintrix AI Systems
+                    </div>
+<div class="flex gap-12">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Security</a>
+</div>
+<div class="opacity-40">© 2024 The Tactile Gallery. All rights reserved.</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Mobile Bottom NavBar (Suppressed if sidebar exists for large screens) -->
+<div class="md:hidden fixed bottom-0 w-full bg-[#f8faf9]/90 backdrop-blur-md px-6 py-4 flex justify-around items-center z-50">
+<span class="material-symbols-outlined text-[#181d1b]/60" data-icon="architecture">architecture</span>
+<span class="material-symbols-outlined text-[#181d1b]/60" data-icon="widgets">widgets</span>
+<span class="material-symbols-outlined text-[#181d1b]/60" data-icon="grid_view">grid_view</span>
+<div class="p-3 bg-[#d5eedd] text-[#508169] rounded-full">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+</div>
+</div>
+</body></html>

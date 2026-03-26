@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
-import { getGroupedDocs } from "@/lib/docs";
+import TopNav from "@/components/TopNav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Mintrix.ai Design",
-  description: "Illustrated design documentation website for Mintrix AI.",
+  title: "Mintrix AI Design",
+  description: "Illustrated design documentation website for Mintrix AI — an editorial-first intelligence platform.",
 };
 
 export default function RootLayout({
@@ -24,24 +24,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const groupedDocs = getGroupedDocs();
-  
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${plusJakarta.variable} ${inter.variable} antialiased`}
     >
       <body 
-        className="flex min-h-screen selection:bg-indigo-500/30 bg-[#fdfcff] text-[#1a1c1e]"
-        style={{
-          backgroundImage: `radial-gradient(ellipse at 20% 0%, rgba(224, 231, 255, 0.4) 0%, transparent 70%), radial-gradient(ellipse at 80% 100%, rgba(252, 231, 243, 0.4) 0%, transparent 70%)`,
-          backgroundAttachment: 'fixed'
-        }}
+        className="bg-[#f9faf6] text-[#191c1a] selection:bg-[#a7dbbf] selection:text-[#31624b]"
+        style={{ fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif" }}
       >
-        <Sidebar groupedDocs={groupedDocs} />
-        <main className="flex-1 min-w-0 overflow-y-auto w-full">
+        <TopNav />
+        <div className="pt-20 min-h-screen">
           {children}
-        </main>
+        </div>
       </body>
     </html>
   );

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>System Architecture | Mintrix AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        /* Custom scrollbar for editorial feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f9faf6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d9dad7;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#d9dad7",
+                        "surface": "#f9faf6",
+                        "surface-bright": "#f9faf6",
+                        "outline": "#717973",
+                        "tertiary-container": "#ffc1b4",
+                        "on-secondary-fixed": "#0d1f17",
+                        "inverse-surface": "#2e312f",
+                        "surface-variant": "#e2e3df",
+                        "surface-container-low": "#f3f4f0",
+                        "on-secondary-fixed-variant": "#384b41",
+                        "surface-container": "#edeeeb",
+                        "tertiary-fixed": "#ffdad3",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#002114",
+                        "tertiary": "#815248",
+                        "primary-fixed-dim": "#9ed2b6",
+                        "on-surface-variant": "#414943",
+                        "secondary-fixed-dim": "#b7cbbe",
+                        "surface-container-high": "#e7e9e5",
+                        "primary-fixed": "#baeed1",
+                        "on-background": "#191c1a",
+                        "outline-variant": "#c0c9c2",
+                        "on-primary-fixed-variant": "#1e4f3a",
+                        "tertiary-fixed-dim": "#f5b8ab",
+                        "secondary": "#506358",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1a",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e3df",
+                        "secondary-container": "#d2e8da",
+                        "primary-container": "#a7dbbf",
+                        "on-primary-container": "#31624b",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#32110b",
+                        "on-tertiary-container": "#7b4d43",
+                        "background": "#f9faf6",
+                        "on-secondary-container": "#56695e",
+                        "primary": "#376851",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f0f1ed",
+                        "surface-tint": "#376851",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#d2e8da",
+                        "inverse-primary": "#9ed2b6",
+                        "on-tertiary-fixed-variant": "#663b32",
+                        "error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<div class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="hidden md:block sticky top-4 left-0 h-screen w-72 m-4 rounded-lg z-50 overflow-hidden bg-[#eaefee] dark:bg-[#1c2220]">
+<div class="flex flex-col p-6 gap-2 h-[calc(100vh-2rem)]">
+<div class="mb-8 px-4">
+<h2 class="text-lg font-bold text-[#181d1b] dark:text-[#f8faf9]">System Core</h2>
+<p class="text-xs text-on-surface-variant/70">Documentation Hub</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">book</span>
+<span class="font-medium text-sm">Introduction</span>
+</a>
+<a class="flex items-center gap-3 text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="font-medium text-sm">Core Principles</span>
+</a>
+<!-- Active State: Component Library (Closest match for Architecture/System docs) -->
+<a class="flex items-center gap-3 bg-[#ffffff] dark:bg-[#181d1b] text-[#508169] dark:text-[#a7dbbf] rounded-full px-4 py-3 font-bold shadow-sm transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">widgets</span>
+<span class="font-medium text-sm">Component Library</span>
+</a>
+<a class="flex items-center gap-3 text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-medium text-sm">Patterns</span>
+</a>
+<a class="flex items-center gap-3 text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300" href="#">
+<span class="material-symbols-outlined">accessibility_new</span>
+<span class="font-medium text-sm">Accessibility</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1">
+<button class="w-full bg-primary text-on-primary rounded-full py-3 px-6 text-sm font-bold mb-4 hover:opacity-90 transition-opacity">
+                        Get Started
+                    </button>
+<a class="flex items-center gap-3 text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-2 rounded-full hover:bg-[#e4e9e8] transition-all" href="#">
+<span class="material-symbols-outlined">code</span>
+<span class="font-medium text-sm">Github</span>
+</a>
+<a class="flex items-center gap-3 text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-2 rounded-full hover:bg-[#e4e9e8] transition-all" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-medium text-sm">Support</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface">
+<!-- TopNavBar Component -->
+<header class="sticky top-0 w-full z-40 bg-[#f8faf9]/80 dark:bg-[#181d1b]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#181d1b] dark:text-[#f8faf9] tracking-tight">Mintrix AI</span>
+<nav class="hidden md:flex gap-6 items-center">
+<!-- Active: Product -->
+<a class="text-[#508169] dark:text-[#a7dbbf] font-semibold border-b-2 border-[#508169] pb-1 font-['Plus_Jakarta_Sans'] text-sm tracking-tight" href="#">Product</a>
+<a class="text-[#181d1b]/60 dark:text-[#f8faf9]/60 hover:text-[#508169] font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight transition-colors duration-200" href="#">Design</a>
+<a class="text-[#181d1b]/60 dark:text-[#f8faf9]/60 hover:text-[#508169] font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight transition-colors duration-200" href="#">Updates</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-sm">search</span>
+<input class="bg-surface-container-high border-none rounded-full pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search architecture..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-[#508169] dark:text-[#a7dbbf] hover:bg-[#eaefee] p-2 rounded-full transition-colors">account_circle</button>
+</div>
+</div>
+</header>
+<!-- Hero Section: Orchestration & Logic -->
+<section class="relative px-8 pt-12 pb-24 overflow-hidden">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 z-10">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase mb-6">Technical Blueprint</span>
+<h1 class="text-6xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-[0.9] mb-6">
+                            Orchestration <br/> <span class="text-primary">&amp; Logic.</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-lg font-medium leading-relaxed">
+                            A high-fidelity overview of the Mintrix AI substrate. Discover how we decouple cognitive processing from data persistence through our multi-layered neural mesh.
+                        </p>
+</div>
+<div class="flex-1 relative">
+<div class="aspect-square w-full rounded-xl bg-surface-container overflow-hidden shadow-2xl relative group">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="Intricate 3D neural network visual with glowing nodes and cyan connection lines on a dark obsidian background with depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6PUPPv1QEmfuED2bNTsNRvkpLjTGcxZtySmsj0SR3a0pjCW26hIMsGkT-E2jgZiUPmi3EqcKkUTUV3tq7KKhUOUvtYlfXyFvkQt6huCF4vZNVIG_1PL9cLJyGPDpP6BED-Z1b7UzBqyQRMzMfniZ-VGkUyjRibdn92PAdrDrIdRVtvb81iByVQhm63QfzCKbvU7QK9GoDPoDB17DLBOqcGp5VSBfWZFvq_cOaB6R2vy93FUJ5zhDRMfb-_JlXprTB32Zkr6SsACU"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+</div>
+<!-- Decorative Editorial Inset -->
+<div class="absolute -bottom-10 -left-10 w-48 h-48 bg-tertiary-container rounded-lg -z-10 opacity-30 blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Architectural Pillars Grid -->
+<section class="px-8 py-20 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<div class="max-w-2xl">
+<h2 class="text-3xl font-bold tracking-tight mb-4">Foundation Pillars</h2>
+<p class="text-on-surface-variant">Three core tenants that define our scalability and fault tolerance. No borders, just pure structural layering.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-3 rounded-full bg-surface-container-lowest text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="p-3 rounded-full bg-surface-container-lowest text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1: Neural Core -->
+<div class="group flex flex-col bg-surface-container-lowest p-10 rounded-lg h-full transition-all duration-500 hover:-translate-y-2">
+<div class="w-14 h-14 rounded-2xl bg-primary-container flex items-center justify-center mb-10">
+<span class="material-symbols-outlined text-on-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Neural Core</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-1 leading-relaxed">
+                                The heart of Mintrix. A distributed inference engine optimized for low-latency token production and context-aware switching.
+                            </p>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/10">
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Latency</span>
+<span class="text-sm font-bold text-primary">&lt;140ms</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/10">
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Throughput</span>
+<span class="text-sm font-bold text-primary">2.4k TPS</span>
+</div>
+</div>
+<button class="mt-10 text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                                View Schema <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Pillar 2: API Gateway -->
+<div class="group flex flex-col bg-surface-container-lowest p-10 rounded-lg h-full transition-all duration-500 hover:-translate-y-2">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-10">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">API Gateway</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-1 leading-relaxed">
+                                Unified entry point using gRPC and GraphQL. Provides polymorphic routing and advanced rate-limiting logic at the edge.
+                            </p>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/10">
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Protocol</span>
+<span class="text-sm font-bold text-secondary">gRPC / WSS</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/10">
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Auth</span>
+<span class="text-sm font-bold text-secondary">mTLS 1.3</span>
+</div>
+</div>
+<button class="mt-10 text-secondary text-sm font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Endpoint Docs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Pillar 3: Data Mesh -->
+<div class="group flex flex-col bg-surface-container-lowest p-10 rounded-lg h-full transition-all duration-500 hover:-translate-y-2">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-container flex items-center justify-center mb-10">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl" style="font-variation-settings: 'FILL' 1;">database</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Data Mesh</h3>
+<p class="text-on-surface-variant text-sm mb-8 flex-1 leading-relaxed">
+                                A decentralized data architecture that treats datasets as independent products, managed through global policy controllers.
+                            </p>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/10">
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Storage</span>
+<span class="text-sm font-bold text-tertiary">Vector S3</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-outline-variant/10">
+<span class="text-xs font-bold text-outline uppercase tracking-wider">Compliance</span>
+<span class="text-sm font-bold text-tertiary">SOC2 / GDPR</span>
+</div>
+</div>
+<button class="mt-10 text-tertiary text-sm font-bold flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Data Lineage <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Inset Section: Technical Diagram -->
+<section class="px-8 py-24 bg-surface">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2">
+<img class="w-full h-auto rounded-lg shadow-xl" data-alt="Modern minimalist abstract data visualization showing complex flow charts and architectural diagrams on a clean white digital canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfNZySctEtJr1lYY_4SiusJWYWAreNWwosz_ryw1fAe5J0fWY-EsC654jh1bSP-T7-DJKTjNvVpwTm4C_TEit6-sm-i8b89cmnEu1cF3ahkyj35c8ElL7cBel5FUUJZbL2YHFghH1wA41Jw0mZ2p38bh5kTTfrjIMmp2k_-ynx-W18_o3RMfO2gVigRzI-dJyWAa6grnZe6HR36g3cTADHLoj1FtuPCuK31_iYBdqyXkYtBOGW_5gbkGDqhd-6yW1iJMk9bzIlUpU"/>
+</div>
+<!-- The Editorial Inset Pattern -->
+<div class="lg:w-1/2 lg:pl-16 relative">
+<div class="absolute -top-12 -left-8 text-[12rem] font-bold text-surface-container-highest opacity-20 -z-10 select-none">
+                            01
+                        </div>
+<h4 class="text-label-md font-bold text-primary tracking-[0.2em] uppercase mb-4">Internal Workflow</h4>
+<h2 class="text-4xl font-bold mb-6 leading-tight">Decentralized Logic Flow</h2>
+<div class="bg-surface-container-high p-8 rounded-lg">
+<p class="text-on-surface-variant leading-relaxed mb-6 italic">
+                                "The Mintrix architecture isn't just about speed; it's about the semantic integrity of every request that passes through the gateway."
+                            </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-outline-variant"></div>
+<div>
+<p class="text-sm font-bold">Dr. Aris Thorne</p>
+<p class="text-xs text-on-surface-variant">Chief Systems Architect</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Specs: Asymmetric Bento Grid -->
+<section class="px-8 pb-32">
+<div class="max-w-7xl mx-auto grid grid-cols-12 gap-6">
+<div class="col-span-12 md:col-span-8 bg-surface-container-low p-12 rounded-lg flex flex-col justify-center">
+<h3 class="text-3xl font-bold mb-6">Redundancy &amp; Failover</h3>
+<p class="text-on-surface-variant mb-8 max-w-xl">
+                            Our architecture utilizes a 'Triple-Shadow' failover mechanism. Every production node is mirrored across three distinct regions, ensuring 99.999% uptime during regional outages.
+                        </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="text-primary font-bold text-2xl mb-1">99.99%</h4>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Availability</p>
+</div>
+<div>
+<h4 class="text-primary font-bold text-2xl mb-1">0ms</h4>
+<p class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Switchover Latency</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-primary p-12 rounded-lg text-on-primary flex flex-col items-start justify-between">
+<span class="material-symbols-outlined text-4xl mb-8">shield</span>
+<div>
+<h3 class="text-2xl font-bold mb-4">Security First</h3>
+<p class="text-primary-container text-sm leading-relaxed mb-6">
+                                End-to-end encryption is not an option; it's the foundation. Data is encrypted in transit and at rest with HSM-backed keys.
+                            </p>
+<button class="bg-surface-container-lowest text-primary px-6 py-2 rounded-full text-xs font-bold hover:scale-105 transition-transform">
+                                Security Whitepaper
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<footer class="mt-auto px-8 py-12 bg-surface-container-highest flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 bg-primary rounded-full"></div>
+<p class="text-sm font-bold opacity-60">© 2024 Mintrix AI Systems. All Rights Reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Infrastructure Status</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

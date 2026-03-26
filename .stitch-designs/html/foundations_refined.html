@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Foundations | Mintrix AI Design Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#f9faf6",
+              "error": "#ba1a1a",
+              "surface-container-high": "#e7e9e5",
+              "secondary-fixed-dim": "#b7cbbe",
+              "primary-fixed": "#baeed1",
+              "surface-variant": "#e2e3df",
+              "primary": "#376851",
+              "secondary-container": "#d2e8da",
+              "primary-container": "#a7dbbf",
+              "surface-container-highest": "#e2e3df",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#9ed2b6",
+              "surface-tint": "#376851",
+              "on-secondary": "#ffffff",
+              "outline": "#717973",
+              "on-surface": "#191c1a",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#ffdad3",
+              "surface-dim": "#d9dad7",
+              "secondary": "#506358",
+              "surface-container-lowest": "#ffffff",
+              "on-surface-variant": "#414943",
+              "on-error": "#ffffff",
+              "on-background": "#191c1a",
+              "primary-fixed-dim": "#9ed2b6",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#f5b8ab",
+              "on-tertiary-fixed-variant": "#663b32",
+              "tertiary": "#815248",
+              "surface-bright": "#f9faf6",
+              "background": "#f9faf6",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#1e4f3a",
+              "on-tertiary-fixed": "#32110b",
+              "on-secondary-container": "#56695e",
+              "on-primary-fixed": "#002114",
+              "inverse-on-surface": "#f0f1ed",
+              "surface-container": "#edeeeb",
+              "tertiary-container": "#ffc1b4",
+              "on-tertiary-container": "#7b4d43",
+              "on-secondary-fixed": "#0d1f17",
+              "surface-container-low": "#f3f4f0",
+              "outline-variant": "#c0c9c2",
+              "secondary-fixed": "#d2e8da",
+              "inverse-surface": "#2e312f",
+              "on-secondary-fixed-variant": "#384b41",
+              "on-primary-container": "#31624b"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8faf9]/80 backdrop-blur-xl flex justify-between items-center px-8 h-16 w-full">
+<div class="text-xl font-bold text-[#181d1b] tracking-tighter">Mintrix AI</div>
+<div class="hidden md:flex items-center gap-8 font-plus-jakarta-sans text-sm font-medium tracking-tight">
+<a class="text-[#707971] hover:text-[#508169] transition-colors" href="#">Product</a>
+<a class="text-[#508169] font-bold border-b-2 border-[#508169] pb-1" href="#">Design</a>
+<a class="text-[#707971] hover:text-[#508169] transition-colors" href="#">Updates</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#eaefee]/50 rounded-lg transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant">dark_mode</span>
+</button>
+<button class="p-2 hover:bg-[#eaefee]/50 rounded-lg transition-all duration-300">
+<span class="material-symbols-outlined text-on-surface-variant">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden ml-2 ring-2 ring-primary-container">
+<img alt="User Profile" data-alt="professional headshot of a creative director in a minimalist studio setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_GSc7JXMFzLnj_M2UfUWEJkhw0vYh1DedZwkEfscLYhJbzPiZ62WGqcxrsNDKgu9jtLa1x_CZBR3uAd3MZCeQegCERcOww1SR4PgeWtrvhZla4Hmf0ETGY0GBLKy3Y2mYO8q9F34ROAhbjEoTvNmaLum5_5acRaIt8ag_wLfPC94mqqRH_dmq2H2Dlh0ST1jDiOFQ1rdokvQAH3w1JryrBGPRk_3ImkUtQoKB4EJs-N_lQbZiMMpGKpnAwyfZ6ZCNf4qsAaU7JMg"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-[#eaefee] flex flex-col gap-4 p-6 z-40">
+<div class="flex items-center gap-3 mb-6 px-2">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">architecture</span>
+</div>
+<div>
+<p class="font-headline text-sm font-extrabold tracking-tight text-on-surface">Library</p>
+<p class="font-label text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant/70">v2.4.0-soft</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-[#ffffff] text-[#508169] rounded-full shadow-sm hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">architecture</span>
+<span class="font-label text-sm font-semibold uppercase tracking-widest">Foundations</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#707971] hover:bg-[#e4e9e8] rounded-full hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">extension</span>
+<span class="font-label text-sm font-semibold uppercase tracking-widest">Components</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#707971] hover:bg-[#e4e9e8] rounded-full hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">style</span>
+<span class="font-label text-sm font-semibold uppercase tracking-widest">Patterns</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#707971] hover:bg-[#e4e9e8] rounded-full hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label text-sm font-semibold uppercase tracking-widest">Workflows</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/20 pt-6">
+<a class="flex items-center gap-3 px-4 py-2 text-[#707971] hover:bg-[#e4e9e8] rounded-full mb-2" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label text-sm font-semibold uppercase tracking-widest">Settings</span>
+</a>
+<button class="w-full mt-4 bg-primary text-on-primary py-3 rounded-full font-label text-xs font-bold uppercase tracking-[0.15em] shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                View Storybook
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-7xl mx-auto px-12 py-12">
+<!-- Hero Section: Core Architecture -->
+<section class="grid grid-cols-12 gap-12 items-end mb-24">
+<div class="col-span-12 lg:col-span-7">
+<span class="inline-block px-4 py-1.5 bg-primary-container text-on-primary-fixed-variant rounded-full text-xs font-bold tracking-widest uppercase mb-6">Foundations Guide</span>
+<h1 class="text-[5rem] leading-[0.9] font-extrabold tracking-tighter text-on-surface mb-8">
+                        Core <br/><span class="text-primary italic font-light">Architecture</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Defining the atomic principles of the system. We prioritize soft surface transitions and tonal depth over rigid borders.
+                    </p>
+</div>
+<div class="col-span-12 lg:col-span-5 h-[400px] rounded-lg overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-tertiary/10 mix-blend-multiply transition-opacity group-hover:opacity-70"></div>
+<img alt="Core Architecture Visual" class="w-full h-full object-cover rounded-lg" data-alt="abstract 3D rendering of floating translucent geometric shapes in soft mint and sage green tones with studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeb51x30ybD_JfiBXQa--SwtFnUMso6y4E0ncMj1qBKqaGvDLiu7RJv0G1rlhcgRs8ZOMeGFUHts33B4zy72szKFmAjHgoaPf0iwS4QWUI38xBGHFcno9GOpVXfgpg_8IVn9z8sjkl-ujM4PPPhQdHMjDf0xOb11PtRZ6Jblz0nm69D7JPOwJ2ONQmfGFO79T5TLnAl2CBGKMHXlfkQTurSgSneSoKG8-w8Rz7A9ffGGlJz9Hj4a7qcBhuA6CQyJ4xr5vstVG4Huk"/>
+</div>
+</section>
+<!-- Core Pillars Grid (Standard Workflows style) -->
+<section class="mb-24">
+<div class="flex justify-between items-baseline mb-12">
+<h2 class="text-3xl font-bold tracking-tight text-on-surface">Design Pillars</h2>
+<div class="h-px flex-grow mx-8 bg-surface-container-high"></div>
+<span class="text-sm font-label font-bold text-primary uppercase tracking-widest">Principles 01-03</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Colors Pillar -->
+<div class="bg-surface-container-low p-8 rounded-lg group hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-secondary-container">palette</span>
+</div>
+<h3 class="text-xl font-bold mb-4 text-on-surface">Colors</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            A desaturated palette of sages and ochres. We use tonal layering to create focus without the need for visual noise.
+                        </p>
+<div class="flex gap-2">
+<div class="w-6 h-6 rounded-full bg-primary"></div>
+<div class="w-6 h-6 rounded-full bg-secondary"></div>
+<div class="w-6 h-6 rounded-full bg-tertiary"></div>
+</div>
+</div>
+<!-- Typography Pillar -->
+<div class="bg-surface-container-low p-8 rounded-lg group hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-primary-container">format_size</span>
+</div>
+<h3 class="text-xl font-bold mb-4 text-on-surface">Typography</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            Plus Jakarta Sans for high-fidelity editorial scale. Focused on legibility and an authoritative yet warm personality.
+                        </p>
+<span class="text-xs font-bold tracking-widest uppercase text-primary">System Font Family</span>
+</div>
+<!-- Grid Pillar -->
+<div class="bg-surface-container-low p-8 rounded-lg group hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-tertiary-container">dashboard</span>
+</div>
+<h3 class="text-xl font-bold mb-4 text-on-surface">Grid &amp; Layout</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                            Asymmetrical layouts that break the traditional grid. We embrace luxurious gutters and intentional overlapping.
+                        </p>
+<span class="text-xs font-bold tracking-widest uppercase text-primary">Responsive Flux</span>
+</div>
+</div>
+</section>
+<!-- Editorial Insight: Pull Quote -->
+<section class="mb-24 flex justify-end">
+<div class="bg-surface-container-highest p-16 rounded-lg w-full md:w-4/5 relative overflow-hidden">
+<div class="absolute -top-12 -left-12 opacity-5">
+<span class="material-symbols-outlined text-[15rem]">format_quote</span>
+</div>
+<blockquote class="relative z-10">
+<p class="text-4xl md:text-5xl font-extralight tracking-tight leading-tight text-on-surface italic mb-8">
+                            "The challenge of the gallery is to remain invisible while making the art within it feel monumental."
+                        </p>
+<cite class="not-italic flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 overflow-hidden">
+<img alt="Elena Vance" data-alt="portrait of a female creative director with glasses in a professional, warm-toned studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Z-Z2wDnFK4r8y2tb0w0mZ9DVEWGLUync6BqSXfzWGH7W3Po34xYbRD8K2t0svn3YtA2yTtol6uVIK8d5x9LSAwmFSIeFqiYDvXE9oIppBHeoSAm5LxGqV3xybvx5rEAyQMpdOJMBFCRA2Ba6is8q2EUbcoRH5rvCzqwauM0zDB1NMp1Y6UTOsKVol2A75mh96HNAYVU9Yydc8QB2ulL_9t_BMI9AO3ryv5QJHL-6xFU5pMaUh5bCWvx19ZUIojBKQjE_YXuzX_U"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Elena Vance</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Design Director</p>
+</div>
+</cite>
+</blockquote>
+</div>
+</section>
+<!-- Technical Specifications -->
+<section>
+<div class="flex items-center gap-4 mb-12">
+<h2 class="text-2xl font-bold text-on-surface">Technical Specifications</h2>
+<div class="h-px bg-outline-variant/30 flex-grow"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-1 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Token Name</th>
+<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Scale Identity</th>
+<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Value</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-6 font-bold text-on-surface">Corner Radius</td>
+<td class="px-8 py-6 italic text-on-surface-variant">Round Eight Scale</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-container/20 text-primary rounded-full text-xs font-bold">DEFAULT (1rem)</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-6 font-bold text-on-surface">Section Spacing</td>
+<td class="px-8 py-6 italic text-on-surface-variant">Editorial Wide</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-container/20 text-primary rounded-full text-xs font-bold">6.5rem (Variable)</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-8 py-6 font-bold text-on-surface">Elevation</td>
+<td class="px-8 py-6 italic text-on-surface-variant">Tonal Layering</td>
+<td class="px-8 py-6">
+<span class="px-3 py-1 bg-primary-container/20 text-primary rounded-full text-xs font-bold">Flat Pastels</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer Space -->
+<footer class="ml-64 bg-surface px-12 py-12 border-t border-surface-container-high">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-on-surface tracking-tighter">Mintrix AI</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<p class="text-sm text-on-surface-variant">The Soft Editorial Design System</p>
+</div>
+<div class="flex gap-8 text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant">
+<a class="hover:text-primary" href="#">Documentation</a>
+<a class="hover:text-primary" href="#">Components</a>
+<a class="hover:text-primary" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

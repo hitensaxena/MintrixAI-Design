@@ -67,7 +67,9 @@ export function getAllDocs(): DocMeta[] {
     "Color Architecture.md",
     "Typography and Spacing.md",
     "Voice and Tone.md",
-    "Interface Components.md"
+    "Interface Components.md",
+    "Layout and Spatial Model.md",
+    "Motion and Transitions.md"
   ];
 
   return fileNames
@@ -140,7 +142,9 @@ export function getGroupedDocs(): DocGroup[] {
       superCategory: "Design",
       category: "Design Foundation",
       docTitles: [
-        "Design Foundation and Philosophy"
+        "Design Foundation and Philosophy",
+        "Layout and Spatial Model",
+        "Motion and Transitions"
       ]
     },
     {

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#d9dad7",
+              "surface": "#f9faf6",
+              "surface-bright": "#f9faf6",
+              "outline": "#717973",
+              "tertiary-container": "#ffc1b4",
+              "on-secondary-fixed": "#0d1f17",
+              "inverse-surface": "#2e312f",
+              "surface-variant": "#e2e3df",
+              "surface-container-low": "#f3f4f0",
+              "on-secondary-fixed-variant": "#384b41",
+              "surface-container": "#edeeeb",
+              "tertiary-fixed": "#ffdad3",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#002114",
+              "tertiary": "#815248",
+              "primary-fixed-dim": "#9ed2b6",
+              "on-surface-variant": "#414943",
+              "secondary-fixed-dim": "#b7cbbe",
+              "surface-container-high": "#e7e9e5",
+              "primary-fixed": "#baeed1",
+              "on-background": "#191c1a",
+              "outline-variant": "#c0c9c2",
+              "on-primary-fixed-variant": "#1e4f3a",
+              "tertiary-fixed-dim": "#f5b8ab",
+              "secondary": "#506358",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#191c1a",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e2e3df",
+              "secondary-container": "#d2e8da",
+              "primary-container": "#a7dbbf",
+              "on-primary-container": "#31624b",
+              "on-secondary": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#32110b",
+              "on-tertiary-container": "#7b4d43",
+              "background": "#f9faf6",
+              "on-secondary-container": "#56695e",
+              "primary": "#376851",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#f0f1ed",
+              "surface-tint": "#376851",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#d2e8da",
+              "inverse-primary": "#9ed2b6",
+              "on-tertiary-fixed-variant": "#663b32",
+              "error-container": "#ffdad6"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f9faf6;
+            color: #191c1a;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col p-6 gap-2 h-[calc(100vh-2rem)] h-screen w-72 m-4 rounded-[2rem] sticky left-0 top-4 bg-[#eaefee] dark:bg-[#1c2220] font-['Plus_Jakarta_Sans'] font-medium text-sm">
+<div class="flex items-center gap-3 px-4 mb-8">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-[#181d1b] dark:text-[#f8faf9] leading-tight">System Core</h2>
+<p class="text-xs opacity-60">Documentation Hub</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1 flex-1">
+<a class="text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="book">book</span>
+                Introduction
+            </a>
+<a class="text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+                Core Principles
+            </a>
+<!-- Active Tab: Component Library (Closest to Workflows) -->
+<a class="bg-[#ffffff] dark:bg-[#181d1b] text-[#508169] dark:text-[#a7dbbf] rounded-full px-4 py-3 font-bold shadow-sm transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="widgets">widgets</span>
+                Component Library
+            </a>
+<a class="text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                Patterns
+            </a>
+<a class="text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300 ease-in-out flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="accessibility_new">accessibility_new</span>
+                Accessibility
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-1 pt-6 border-t border-outline-variant/10">
+<a class="text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300 ease-in-out flex items-center gap-3 text-xs" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="code">code</span>
+                Github
+            </a>
+<a class="text-[#181d1b]/70 dark:text-[#f8faf9]/70 px-4 py-3 rounded-full hover:bg-[#e4e9e8] dark:hover:bg-[#2a322f] transition-all duration-300 ease-in-out flex items-center gap-3 text-xs" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+                Support
+            </a>
+<button class="mt-4 bg-primary text-on-primary rounded-full py-3 font-bold transition-transform active:scale-95">
+                Get Started
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-40 bg-[#f8faf9]/80 dark:bg-[#181d1b]/80 backdrop-blur-xl flex justify-between items-center px-8 h-16 w-full max-w-full font-['Plus_Jakarta_Sans'] font-medium text-sm tracking-tight no-border">
+<div class="flex items-center gap-12">
+<span class="text-xl font-bold text-[#181d1b] dark:text-[#f8faf9] tracking-tight">System Core</span>
+<nav class="hidden md:flex gap-8">
+<!-- Active: Product -->
+<a class="text-[#508169] dark:text-[#a7dbbf] font-semibold border-b-2 border-[#508169] pb-1" href="#">Product</a>
+<a class="text-[#181d1b]/60 dark:text-[#f8faf9]/60 hover:text-[#508169] transition-colors duration-200" href="#">Design</a>
+<a class="text-[#181d1b]/60 dark:text-[#f8faf9]/60 hover:text-[#508169] transition-colors duration-200" href="#">Updates</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group hidden sm:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline opacity-50 text-lg">search</span>
+<input class="bg-surface-container-high border-none rounded-full pl-10 pr-4 py-1.5 text-xs focus:ring-2 focus:ring-primary w-48 transition-all duration-300 focus:w-64" placeholder="Quick search..." type="text"/>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#eaefee] dark:hover:bg-[#242b28] transition-colors duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<section class="p-8 lg:p-12 max-w-7xl mx-auto w-full space-y-16">
+<!-- Hero: Operational Workflows -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-container p-12 lg:p-20 text-on-primary">
+<div class="relative z-10 max-w-2xl">
+<span class="inline-block px-3 py-1 bg-on-primary/10 rounded-full text-xs font-bold tracking-widest uppercase mb-6">Internal Infrastructure</span>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter leading-tight mb-8">Operational Workflows</h1>
+<p class="text-lg opacity-90 leading-relaxed font-light mb-10 max-w-xl">
+                        A dynamic ecosystem of interconnected nodes. We streamline the invisible machinery that powers our product delivery and user lifecycle management.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-surface text-primary px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all active:scale-95">Explore Graph</button>
+<button class="border border-on-primary/30 px-8 py-4 rounded-full font-bold hover:bg-on-primary/10 transition-all">View Schema</button>
+</div>
+</div>
+<!-- Abstract Dynamic Visual Integration (using background logic) -->
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-30 pointer-events-none">
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=2068&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-overlay" data-alt="Abstract visualization of interconnected digital nodes and glowing fiber optic networks representing data flow and system workflows"></div>
+</div>
+</div>
+<!-- Content: Product Lifecycle Workflows -->
+<div class="space-y-10">
+<div class="flex items-end justify-between">
+<div>
+<h2 class="text-4xl font-bold tracking-tight text-on-surface">Product Lifecycle Workflows</h2>
+<p class="text-on-surface-variant mt-2 text-lg">Systematic paths defining our operational excellence.</p>
+</div>
+<div class="hidden sm:flex gap-2">
+<button class="p-3 bg-surface-container-high rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-3 bg-surface-container-high rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">list</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Admin Operations (Wide Card) -->
+<div class="md:col-span-8 group relative bg-surface-container-lowest rounded-lg p-8 shadow-sm hover:shadow-md transition-all border-none flex flex-col">
+<div class="flex justify-between items-start mb-12">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 bg-secondary-container text-on-secondary-container rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">settings_account_box</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold">Admin Operations</h3>
+<span class="text-xs font-bold text-primary tracking-widest uppercase">High Priority</span>
+</div>
+</div>
+<span class="px-4 py-2 bg-surface-container text-xs rounded-full font-medium">v4.2 Active</span>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+<div class="space-y-4">
+<p class="text-on-surface-variant leading-relaxed">Centralized management for system health, user permissions, and global configuration overrides.</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                        Automated Permission Audits
+                                    </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                                        Real-time Config Injection
+                                    </li>
+</ul>
+</div>
+<div class="bg-surface-container rounded-xl overflow-hidden relative min-h-[160px]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="Sleek dashboard UI showing system health metrics and administrative controls with a clean minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7JtZhYHH6yjHAW3ntSCvu4kFqarjlSAzmLCi5bIUoeo60_SHwf_AanpVVk0KcIj3iALOmySzYlyZkE8rhWD_RgBAD49mvQkQxwh0zYzeal7n2wsoyd6_eQsNFHYoEYQyamLrmwu4q03ssIlA-Dh01zvAk8FC1QlIzAZI2KtFkCOMAsXzIDUudfgg7ax9HV-7tHL7yFq-G_3aSqgZgW3hrr-MczyUwZ45P6KjV_0_h6YXoheEn-G44fNrkUxp9gJ6Py8meBnGwZp0"/>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between pt-6 border-t border-surface-container">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-lowest bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female system administrator in a professional workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkce_0GOU5_J2oR2qaiSb9egiNFdS83bf9DuJlhZpGEWpJ0jTbidLp9EsJffYaP0JRsmCGXLkOUUFNJH6ooZLjsiafHatUSpJa70cjCjIokutPfZsX708IFimQ2A188sEZ45bMZ1uIq0zQlqSxjvbK77SNakjyKUgoDvwG54Mt6tyYKWrO4oUeNsFzeqAwx4b7hZDbKjUF8X_-9bD-AE8Iz7TmusqUyFuExkDHmrmYbhDMAJT3UJIhzQwOvdYQI3js9FI3HqS5C6w"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-lowest bg-surface-dim overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a male developer working at a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATcHa6MtwHeDWbhlIuXFhji1GKawjDObUYhekXExPCskVOL00ze1Kitv5d7bfr39PnQDNvrtF8bwKnhDM3gC_edFieRJdbAYQS4nR3M89L3QNd-pbfaOKznhTl396-T5F72v_SGo0fwqYtqpDwR5Qf_kxxugLA5BDYoN_M9xFF2IKSAQKwZQrMcJUEU4WKqnCHR0ra92ruh7X7mpMutvslndFASH1N7e5vlzBQ2mhtCHAyHZsk2UcfrONhbsrseNuabXtcO55h1Ww"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-surface-container-lowest bg-surface-container flex items-center justify-center text-[10px] font-bold">+8</div>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2.5 rounded-full font-bold text-sm hover:opacity-90 transition-opacity">Launch Admin Panel</button>
+</div>
+</div>
+<!-- Onboarding Experience (Tall Card) -->
+<div class="md:col-span-4 bg-tertiary-container rounded-lg p-8 flex flex-col">
+<div class="mb-10">
+<span class="material-symbols-outlined text-4xl text-on-tertiary-container mb-4">how_to_reg</span>
+<h3 class="text-2xl font-bold text-on-tertiary-container leading-tight">Onboarding Experience</h3>
+</div>
+<div class="flex-1 space-y-6">
+<div class="bg-white/30 backdrop-blur-md rounded-xl p-4 border border-white/20">
+<p class="text-xs font-bold uppercase tracking-wider text-on-tertiary-container/60 mb-2">Current Success Rate</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-extrabold text-on-tertiary-container">94.8%</span>
+<span class="text-xs text-on-tertiary-container pb-1 font-bold">+2.4%</span>
+</div>
+</div>
+<p class="text-on-tertiary-container/80 text-sm leading-relaxed">The gateway for all new ecosystem participants. Includes verification, setup, and first-value delivery paths.</p>
+</div>
+<div class="pt-8">
+<button class="w-full bg-on-tertiary-container text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 group-hover:gap-4 transition-all">
+                                Review Funnel
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Data Governance (Bottom Wide) -->
+<div class="md:col-span-12 bg-surface-container rounded-lg p-8 flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1 space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">security</span>
+<h3 class="text-2xl font-bold">Data Governance</h3>
+</div>
+<p class="text-on-surface-variant max-w-xl">Strict compliance and integrity workflows ensuring that all organizational data meets global standards for privacy, security, and accessibility.</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-bold">GDPR Compliant</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-bold">SOC2 Audited</span>
+<span class="px-4 py-2 bg-surface-container-highest rounded-full text-xs font-bold">End-to-End Encryption</span>
+</div>
+</div>
+<div class="flex-shrink-0 grid grid-cols-2 gap-4">
+<div class="w-32 h-32 bg-surface-container-lowest rounded-xl flex flex-col items-center justify-center p-4 text-center">
+<span class="text-2xl font-bold text-primary">0%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant mt-1">Leakage</span>
+</div>
+<div class="w-32 h-32 bg-primary text-on-primary rounded-xl flex flex-col items-center justify-center p-4 text-center">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<span class="text-[10px] uppercase font-bold mt-1">Verified</span>
+</div>
+</div>
+<button class="md:self-center bg-surface-container-lowest text-on-surface border border-outline/10 px-10 py-4 rounded-full font-bold hover:bg-white transition-all">Configure Policies</button>
+</div>
+</div>
+</div>
+<!-- Custom Editorial Inset Pattern -->
+<div class="py-20 flex justify-end">
+<div class="bg-surface-container-highest rounded-xl p-12 max-w-lg -mr-12 md:mr-0 relative z-10 shadow-lg border-r-8 border-primary">
+<span class="material-symbols-outlined text-primary text-5xl mb-6">format_quote</span>
+<p class="text-2xl font-medium leading-relaxed italic text-on-surface-variant">
+                        "The most efficient workflows are those that the user never needs to think about. They are the silent architects of productivity."
+                    </p>
+<div class="mt-8">
+<p class="font-bold text-on-surface">Elena Vost</p>
+<p class="text-sm text-on-surface-variant">Lead Systems Architect</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Decoration -->
+<footer class="mt-auto px-8 py-12 bg-surface-container flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<span class="text-lg font-extrabold tracking-tight">System Core</span>
+<span class="text-xs opacity-40">© 2024 Editorial Systems Inc.</span>
+</div>
+<nav class="flex gap-8 text-xs font-bold uppercase tracking-widest text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Documentation</a>
+<a class="hover:text-primary transition-colors" href="#">Security</a>
+<a class="hover:text-primary transition-colors" href="#">Status</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+</nav>
+</footer>
+</main>
+</body></html>

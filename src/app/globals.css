@@ -2,65 +2,126 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-background: #f8f9fa;
-  --color-on-background: #2d3335;
-  --color-surface: #f8f9fa;
-  --color-surface-dim: #d5dbdd;
-  --color-on-surface: #2d3335;
-  --color-surface-variant: #dee3e6;
-  --color-on-surface-variant: #5a6062;
+  /* ===== TACTILE GALLERY — Emerald Editorial Palette ===== */
+
+  /* Surface System (warm off-whites with sage undertone) */
+  --color-background: #f9faf6;
+  --color-on-background: #191c1a;
+  --color-surface: #f9faf6;
+  --color-surface-bright: #f9faf6;
+  --color-surface-dim: #d9dad7;
+  --color-on-surface: #191c1a;
+  --color-surface-variant: #e2e3df;
+  --color-on-surface-variant: #414943;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f1f4f5;
-  --color-surface-container: #ebeef0;
-  --color-surface-container-high: #e5e9eb;
-  --color-surface-container-highest: #dee3e6;
-  
-  --color-primary: #005bc1;
-  --color-on-primary: #f9f8ff;
-  --color-primary-container: #3d89ff;
-  --color-on-primary-container: #000410;
-  
-  --color-secondary: #8720de;
-  --color-on-secondary: #fff6ff;
-  --color-secondary-container: #f0dbff;
-  --color-on-secondary-container: #7700cd;
-  
-  --color-tertiary: #006d4a;
-  --color-on-tertiary: #e6ffee;
-  --color-tertiary-container: #69f6b8;
-  --color-on-tertiary-container: #005a3c;
-  
-  --color-outline: #767c7e;
-  --color-outline-variant: #adb3b5;
-  
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-plus-jakarta: var(--font-plus-jakarta), var(--font-inter), system-ui, sans-serif;
+  --color-surface-container-low: #f3f4f0;
+  --color-surface-container: #edeeeb;
+  --color-surface-container-high: #e7e9e5;
+  --color-surface-container-highest: #e2e3df;
+
+  /* Primary — Emerald */
+  --color-primary: #376851;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #a7dbbf;
+  --color-on-primary-container: #31624b;
+  --color-primary-fixed: #baeed1;
+  --color-primary-fixed-dim: #9ed2b6;
+
+  /* Secondary — Sage */
+  --color-secondary: #506358;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #d2e8da;
+  --color-on-secondary-container: #56695e;
+  --color-secondary-fixed: #d2e8da;
+  --color-secondary-fixed-dim: #b7cbbe;
+
+  /* Tertiary — Warm Earthen */
+  --color-tertiary: #815248;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ffc1b4;
+  --color-on-tertiary-container: #7b4d43;
+  --color-tertiary-fixed: #ffdad3;
+  --color-tertiary-fixed-dim: #f5b8ab;
+
+  /* Error */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Outline */
+  --color-outline: #717973;
+  --color-outline-variant: #c0c9c2;
+
+  /* Inverse */
+  --color-inverse-surface: #2e312f;
+  --color-inverse-on-surface: #f0f1ed;
+  --color-inverse-primary: #9ed2b6;
+
+  /* Typography — Plus Jakarta Sans for headlines, Inter for body */
+  --font-sans: var(--font-plus-jakarta), var(--font-inter), system-ui, sans-serif;
+  --font-plus-jakarta: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-headline: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-label: var(--font-inter), system-ui, sans-serif;
 }
 
 :root {
-  --background: #f8f9fa;
-  --foreground: #2d3335;
+  --background: #f9faf6;
+  --foreground: #191c1a;
 }
 
+/* ===== TACTILE GALLERY UTILITIES ===== */
 
+/* Glassmorphic Navigation */
+.glass-nav {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background-color: rgba(236, 253, 245, 0.8);
+}
 
-.m3-surface-card {
+/* No-Scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Tactile Surface Card (No-Line Rule) */
+.tactile-card {
   background-color: var(--color-surface-container-lowest);
-  border-radius: 24px;
+  border-radius: 1rem;
   border: none;
   box-shadow: none;
-  transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+  transition: background-color 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
-.m3-surface-card:hover {
-  box-shadow: 0px 12px 32px rgba(45, 51, 53, 0.06);
+.tactile-card:hover {
+  background-color: var(--color-surface-container-low);
+  transform: translateY(-2px);
 }
 
-.m3-signature-gradient {
+/* Editorial Tile (Premium card) */
+.editorial-tile {
+  background-color: var(--color-surface-container-low);
+  border-radius: 1rem;
+  border: none;
+  box-shadow: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.editorial-tile:hover {
+  background-color: var(--color-surface-container);
+}
+
+/* Emerald Signature Gradient */
+.emerald-gradient {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
 }
 
-.m3-signature-gradient-text {
+.emerald-gradient-text {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-container));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -68,45 +129,43 @@
   color: transparent;
 }
 
-
-/* Editorial Intelligence Prose Overrides */
-/* Forcing Light Mode against Tailwind's Auto-Dark Inversion */
+/* ===== PROSE OVERRIDES — Tactile Gallery ===== */
 .prose {
-  --tw-prose-body: #5a6062 !important;
-  --tw-prose-headings: #2d3335 !important;
-  --tw-prose-links: #005bc1 !important;
-  --tw-prose-bold: #2d3335 !important;
-  --tw-prose-counters: #767c7e !important;
-  --tw-prose-bullets: #005bc1 !important;
-  --tw-prose-hr: #adb3b5 !important;
-  --tw-prose-quotes: #5a6062 !important;
-  --tw-prose-quote-borders: #005bc1 !important;
-  --tw-prose-captions: #767c7e !important;
-  --tw-prose-code: #000410 !important;
-  --tw-prose-pre-code: #5a6062 !important;
-  --tw-prose-pre-bg: #ebeef0 !important;
-  --tw-prose-th-borders: #dee3e6 !important;
-  --tw-prose-td-borders: #dee3e6 !important;
+  --tw-prose-body: #414943 !important;
+  --tw-prose-headings: #191c1a !important;
+  --tw-prose-links: #376851 !important;
+  --tw-prose-bold: #191c1a !important;
+  --tw-prose-counters: #717973 !important;
+  --tw-prose-bullets: #376851 !important;
+  --tw-prose-hr: #c0c9c2 !important;
+  --tw-prose-quotes: #414943 !important;
+  --tw-prose-quote-borders: #376851 !important;
+  --tw-prose-captions: #717973 !important;
+  --tw-prose-code: #191c1a !important;
+  --tw-prose-pre-code: #e2e3df !important;
+  --tw-prose-pre-bg: #181d1b !important;
+  --tw-prose-th-borders: #c0c9c2 !important;
+  --tw-prose-td-borders: #e2e3df !important;
 
-  /* Overriding Tailwind Typography Dark Mode Hooks */
-  --tw-prose-invert-body: #5a6062 !important;
-  --tw-prose-invert-headings: #2d3335 !important;
-  --tw-prose-invert-links: #005bc1 !important;
-  --tw-prose-invert-bold: #2d3335 !important;
-  --tw-prose-invert-counters: #767c7e !important;
-  --tw-prose-invert-bullets: #005bc1 !important;
-  --tw-prose-invert-hr: #adb3b5 !important;
-  --tw-prose-invert-quotes: #5a6062 !important;
-  --tw-prose-invert-quote-borders: #005bc1 !important;
-  --tw-prose-invert-captions: #767c7e !important;
-  --tw-prose-invert-code: #000410 !important;
-  --tw-prose-invert-pre-code: #5a6062 !important;
-  --tw-prose-invert-pre-bg: #ebeef0 !important;
-  --tw-prose-invert-th-borders: #dee3e6 !important;
-  --tw-prose-invert-td-borders: #dee3e6 !important;
+  /* Override dark mode hooks */
+  --tw-prose-invert-body: #414943 !important;
+  --tw-prose-invert-headings: #191c1a !important;
+  --tw-prose-invert-links: #376851 !important;
+  --tw-prose-invert-bold: #191c1a !important;
+  --tw-prose-invert-counters: #717973 !important;
+  --tw-prose-invert-bullets: #376851 !important;
+  --tw-prose-invert-hr: #c0c9c2 !important;
+  --tw-prose-invert-quotes: #414943 !important;
+  --tw-prose-invert-quote-borders: #376851 !important;
+  --tw-prose-invert-captions: #717973 !important;
+  --tw-prose-invert-code: #191c1a !important;
+  --tw-prose-invert-pre-code: #e2e3df !important;
+  --tw-prose-invert-pre-bg: #181d1b !important;
+  --tw-prose-invert-th-borders: #c0c9c2 !important;
+  --tw-prose-invert-td-borders: #e2e3df !important;
 }
 
 .prose pre {
-  border-radius: 16px;
-  border: 1px solid #e1e2e8;
+  border-radius: 1rem;
+  border: none;
 }
